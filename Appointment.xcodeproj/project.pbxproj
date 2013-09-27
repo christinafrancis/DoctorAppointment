@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CFCD84D217F3A8BD0054D1B4 /* UITextField+nextTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = CFCD84D117F3A8BD0054D1B4 /* UITextField+nextTextField.m */; };
+		CFCD84D517F3BFE10054D1B4 /* patient.m in Sources */ = {isa = PBXBuildFile; fileRef = CFCD84D417F3BFE10054D1B4 /* patient.m */; };
+		CFCD84D817F3D6A00054D1B4 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFCD84D717F3D6A00054D1B4 /* SignUpViewController.m */; };
+		CFCD84DB17F505470054D1B4 /* UserPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFCD84DA17F505470054D1B4 /* UserPageViewController.m */; };
 		CFD3924217F10E5C00C580CA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFD3924117F10E5C00C580CA /* UIKit.framework */; };
 		CFD3924417F10E5C00C580CA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFD3924317F10E5C00C580CA /* Foundation.framework */; };
 		CFD3924617F10E5C00C580CA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFD3924517F10E5C00C580CA /* CoreGraphics.framework */; };
@@ -24,6 +28,26 @@
 		CFD3926B17F10E5D00C580CA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFD3924317F10E5C00C580CA /* Foundation.framework */; };
 		CFD3927317F10E5D00C580CA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CFD3927117F10E5D00C580CA /* InfoPlist.strings */; };
 		CFD3927617F10E5D00C580CA /* AppointmentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD3927517F10E5D00C580CA /* AppointmentTests.m */; };
+		CFD392A517F261D700C580CA /* SBJsonStreamWriterState.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD3929117F261D600C580CA /* SBJsonStreamWriterState.m */; };
+		CFD392A617F261D700C580CA /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD3929617F261D600C580CA /* SBJsonParser.m */; };
+		CFD392A717F261D700C580CA /* SBJsonStreamWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD3929817F261D600C580CA /* SBJsonStreamWriter.m */; };
+		CFD392A817F261D700C580CA /* SBJsonStreamParserAccumulator.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD3929917F261D600C580CA /* SBJsonStreamParserAccumulator.m */; };
+		CFD392A917F261D700C580CA /* SBJsonStreamParser.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD3929C17F261D700C580CA /* SBJsonStreamParser.m */; };
+		CFD392AA17F261D700C580CA /* SBJsonStreamParserAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD3929D17F261D700C580CA /* SBJsonStreamParserAdapter.m */; };
+		CFD392AB17F261D700C580CA /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD3929E17F261D700C580CA /* SBJsonWriter.m */; };
+		CFD392AC17F261D700C580CA /* SBJsonStreamWriterAccumulator.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD3929F17F261D700C580CA /* SBJsonStreamWriterAccumulator.m */; };
+		CFD392AD17F261D700C580CA /* SBJsonStreamParserState.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD392A217F261D700C580CA /* SBJsonStreamParserState.m */; };
+		CFD392AE17F261D700C580CA /* SBJsonStreamTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD392A317F261D700C580CA /* SBJsonStreamTokeniser.m */; };
+		CFD392B017F2637100C580CA /* SBJsonStreamWriterState.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD3929117F261D600C580CA /* SBJsonStreamWriterState.m */; };
+		CFD392B517F2637100C580CA /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD3929617F261D600C580CA /* SBJsonParser.m */; };
+		CFD392B717F2637100C580CA /* SBJsonStreamWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD3929817F261D600C580CA /* SBJsonStreamWriter.m */; };
+		CFD392B817F2637100C580CA /* SBJsonStreamParserAccumulator.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD3929917F261D600C580CA /* SBJsonStreamParserAccumulator.m */; };
+		CFD392BB17F2637100C580CA /* SBJsonStreamParser.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD3929C17F261D700C580CA /* SBJsonStreamParser.m */; };
+		CFD392BC17F2637100C580CA /* SBJsonStreamParserAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD3929D17F261D700C580CA /* SBJsonStreamParserAdapter.m */; };
+		CFD392BD17F2637100C580CA /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD3929E17F261D700C580CA /* SBJsonWriter.m */; };
+		CFD392BE17F2637100C580CA /* SBJsonStreamWriterAccumulator.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD3929F17F261D700C580CA /* SBJsonStreamWriterAccumulator.m */; };
+		CFD392C117F2637100C580CA /* SBJsonStreamParserState.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD392A217F261D700C580CA /* SBJsonStreamParserState.m */; };
+		CFD392C217F2637100C580CA /* SBJsonStreamTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD392A317F261D700C580CA /* SBJsonStreamTokeniser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +61,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CFCD84D017F3A8BD0054D1B4 /* UITextField+nextTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+nextTextField.h"; sourceTree = "<group>"; };
+		CFCD84D117F3A8BD0054D1B4 /* UITextField+nextTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+nextTextField.m"; sourceTree = "<group>"; };
+		CFCD84D317F3BFE10054D1B4 /* patient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = patient.h; sourceTree = "<group>"; };
+		CFCD84D417F3BFE10054D1B4 /* patient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = patient.m; sourceTree = "<group>"; };
+		CFCD84D617F3D6A00054D1B4 /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
+		CFCD84D717F3D6A00054D1B4 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
+		CFCD84D917F505470054D1B4 /* UserPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserPageViewController.h; sourceTree = "<group>"; };
+		CFCD84DA17F505470054D1B4 /* UserPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserPageViewController.m; sourceTree = "<group>"; };
 		CFD3923E17F10E5C00C580CA /* Appointment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Appointment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFD3924117F10E5C00C580CA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CFD3924317F10E5C00C580CA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -60,6 +92,27 @@
 		CFD3927217F10E5D00C580CA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CFD3927417F10E5D00C580CA /* AppointmentTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppointmentTests.h; sourceTree = "<group>"; };
 		CFD3927517F10E5D00C580CA /* AppointmentTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppointmentTests.m; sourceTree = "<group>"; };
+		CFD3929017F261D600C580CA /* SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJson.h; sourceTree = "<group>"; };
+		CFD3929117F261D600C580CA /* SBJsonStreamWriterState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamWriterState.m; sourceTree = "<group>"; };
+		CFD3929217F261D600C580CA /* SBJsonStreamWriterState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamWriterState.h; sourceTree = "<group>"; };
+		CFD3929317F261D600C580CA /* SBJsonStreamParserState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParserState.h; sourceTree = "<group>"; };
+		CFD3929417F261D600C580CA /* SBJsonStreamWriterAccumulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamWriterAccumulator.h; sourceTree = "<group>"; };
+		CFD3929517F261D600C580CA /* SBJsonStreamWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamWriter.h; sourceTree = "<group>"; };
+		CFD3929617F261D600C580CA /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
+		CFD3929717F261D600C580CA /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
+		CFD3929817F261D600C580CA /* SBJsonStreamWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamWriter.m; sourceTree = "<group>"; };
+		CFD3929917F261D600C580CA /* SBJsonStreamParserAccumulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParserAccumulator.m; sourceTree = "<group>"; };
+		CFD3929A17F261D600C580CA /* SBJsonStreamParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParser.h; sourceTree = "<group>"; };
+		CFD3929B17F261D700C580CA /* SBJsonStreamParserAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParserAdapter.h; sourceTree = "<group>"; };
+		CFD3929C17F261D700C580CA /* SBJsonStreamParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParser.m; sourceTree = "<group>"; };
+		CFD3929D17F261D700C580CA /* SBJsonStreamParserAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParserAdapter.m; sourceTree = "<group>"; };
+		CFD3929E17F261D700C580CA /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
+		CFD3929F17F261D700C580CA /* SBJsonStreamWriterAccumulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamWriterAccumulator.m; sourceTree = "<group>"; };
+		CFD392A017F261D700C580CA /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
+		CFD392A117F261D700C580CA /* SBJsonStreamParserAccumulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParserAccumulator.h; sourceTree = "<group>"; };
+		CFD392A217F261D700C580CA /* SBJsonStreamParserState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParserState.m; sourceTree = "<group>"; };
+		CFD392A317F261D700C580CA /* SBJsonStreamTokeniser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamTokeniser.m; sourceTree = "<group>"; };
+		CFD392A417F261D700C580CA /* SBJsonStreamTokeniser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamTokeniser.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,10 +172,18 @@
 		CFD3924717F10E5C00C580CA /* Appointment */ = {
 			isa = PBXGroup;
 			children = (
+				CFCD84D317F3BFE10054D1B4 /* patient.h */,
+				CFCD84D417F3BFE10054D1B4 /* patient.m */,
+				CFCD84D017F3A8BD0054D1B4 /* UITextField+nextTextField.h */,
+				CFCD84D117F3A8BD0054D1B4 /* UITextField+nextTextField.m */,
 				CFD3925017F10E5C00C580CA /* CFAppDelegate.h */,
 				CFD3925117F10E5C00C580CA /* CFAppDelegate.m */,
 				CFD3925917F10E5C00C580CA /* MainStoryboard_iPhone.storyboard */,
 				CFD3925C17F10E5C00C580CA /* MainStoryboard_iPad.storyboard */,
+				CFCD84D917F505470054D1B4 /* UserPageViewController.h */,
+				CFCD84DA17F505470054D1B4 /* UserPageViewController.m */,
+				CFCD84D617F3D6A00054D1B4 /* SignUpViewController.h */,
+				CFCD84D717F3D6A00054D1B4 /* SignUpViewController.m */,
 				CFD3925F17F10E5C00C580CA /* CFViewController.h */,
 				CFD3926017F10E5C00C580CA /* CFViewController.m */,
 				CFD3924817F10E5C00C580CA /* Supporting Files */,
@@ -133,6 +194,27 @@
 		CFD3924817F10E5C00C580CA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CFD3929017F261D600C580CA /* SBJson.h */,
+				CFD3929117F261D600C580CA /* SBJsonStreamWriterState.m */,
+				CFD3929217F261D600C580CA /* SBJsonStreamWriterState.h */,
+				CFD3929317F261D600C580CA /* SBJsonStreamParserState.h */,
+				CFD3929417F261D600C580CA /* SBJsonStreamWriterAccumulator.h */,
+				CFD3929517F261D600C580CA /* SBJsonStreamWriter.h */,
+				CFD3929617F261D600C580CA /* SBJsonParser.m */,
+				CFD3929717F261D600C580CA /* SBJsonParser.h */,
+				CFD3929817F261D600C580CA /* SBJsonStreamWriter.m */,
+				CFD3929917F261D600C580CA /* SBJsonStreamParserAccumulator.m */,
+				CFD3929A17F261D600C580CA /* SBJsonStreamParser.h */,
+				CFD3929B17F261D700C580CA /* SBJsonStreamParserAdapter.h */,
+				CFD3929C17F261D700C580CA /* SBJsonStreamParser.m */,
+				CFD3929D17F261D700C580CA /* SBJsonStreamParserAdapter.m */,
+				CFD3929E17F261D700C580CA /* SBJsonWriter.m */,
+				CFD3929F17F261D700C580CA /* SBJsonStreamWriterAccumulator.m */,
+				CFD392A017F261D700C580CA /* SBJsonWriter.h */,
+				CFD392A117F261D700C580CA /* SBJsonStreamParserAccumulator.h */,
+				CFD392A217F261D700C580CA /* SBJsonStreamParserState.m */,
+				CFD392A317F261D700C580CA /* SBJsonStreamTokeniser.m */,
+				CFD392A417F261D700C580CA /* SBJsonStreamTokeniser.h */,
 				CFD3924917F10E5C00C580CA /* Appointment-Info.plist */,
 				CFD3924A17F10E5C00C580CA /* InfoPlist.strings */,
 				CFD3924D17F10E5C00C580CA /* main.m */,
@@ -275,9 +357,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFD392B017F2637100C580CA /* SBJsonStreamWriterState.m in Sources */,
+				CFD392B517F2637100C580CA /* SBJsonParser.m in Sources */,
+				CFD392B717F2637100C580CA /* SBJsonStreamWriter.m in Sources */,
+				CFD392B817F2637100C580CA /* SBJsonStreamParserAccumulator.m in Sources */,
+				CFD392BB17F2637100C580CA /* SBJsonStreamParser.m in Sources */,
+				CFD392BC17F2637100C580CA /* SBJsonStreamParserAdapter.m in Sources */,
+				CFD392BD17F2637100C580CA /* SBJsonWriter.m in Sources */,
+				CFD392BE17F2637100C580CA /* SBJsonStreamWriterAccumulator.m in Sources */,
+				CFD392C117F2637100C580CA /* SBJsonStreamParserState.m in Sources */,
+				CFD392C217F2637100C580CA /* SBJsonStreamTokeniser.m in Sources */,
 				CFD3924E17F10E5C00C580CA /* main.m in Sources */,
 				CFD3925217F10E5C00C580CA /* CFAppDelegate.m in Sources */,
 				CFD3926117F10E5C00C580CA /* CFViewController.m in Sources */,
+				CFCD84D217F3A8BD0054D1B4 /* UITextField+nextTextField.m in Sources */,
+				CFCD84D517F3BFE10054D1B4 /* patient.m in Sources */,
+				CFCD84D817F3D6A00054D1B4 /* SignUpViewController.m in Sources */,
+				CFCD84DB17F505470054D1B4 /* UserPageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +382,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				CFD3927617F10E5D00C580CA /* AppointmentTests.m in Sources */,
+				CFD392A517F261D700C580CA /* SBJsonStreamWriterState.m in Sources */,
+				CFD392A617F261D700C580CA /* SBJsonParser.m in Sources */,
+				CFD392A717F261D700C580CA /* SBJsonStreamWriter.m in Sources */,
+				CFD392A817F261D700C580CA /* SBJsonStreamParserAccumulator.m in Sources */,
+				CFD392A917F261D700C580CA /* SBJsonStreamParser.m in Sources */,
+				CFD392AA17F261D700C580CA /* SBJsonStreamParserAdapter.m in Sources */,
+				CFD392AB17F261D700C580CA /* SBJsonWriter.m in Sources */,
+				CFD392AC17F261D700C580CA /* SBJsonStreamWriterAccumulator.m in Sources */,
+				CFD392AD17F261D700C580CA /* SBJsonStreamParserState.m in Sources */,
+				CFD392AE17F261D700C580CA /* SBJsonStreamTokeniser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -468,6 +574,7 @@
 				CFD3927B17F10E5D00C580CA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CFD3927C17F10E5D00C580CA /* Build configuration list for PBXNativeTarget "AppointmentTests" */ = {
 			isa = XCConfigurationList;
@@ -476,6 +583,7 @@
 				CFD3927E17F10E5D00C580CA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

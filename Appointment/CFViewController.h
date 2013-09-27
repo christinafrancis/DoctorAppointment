@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CFViewController : UIViewController
+@interface CFViewController : UIViewController <UITextFieldDelegate>
+@property (weak, nonatomic) IBOutlet UITextField *tf_uname;
+@property (weak, nonatomic) IBOutlet UITextField *tf_pswd;
+@property (weak, nonatomic) UITextField *activeTF;
+@property (weak, nonatomic) IBOutlet UILabel *lb_status;
 
 @end

@@ -1,35 +1,41 @@
 //
-//  CFViewController.m
+//  SignUpViewController.h
 //  Appointment
 //
 //  Created by Christina Francis on 9/23/13.
 //  Copyright (c) 2013 Christina Francis. All rights reserved.
 //
 
-#import "CFViewController.h"
+
+
+#import "SignUpViewController.h"
 #import "SBJson.h"
 #import "UITextField+nextTextField.h"
 #import "patient.h"
-#import "SignUpViewController.h"
 
 
-@interface CFViewController ()
+@interface SignUpViewController ()
 
-@property patient* pat1;
+@property patient* pat;
 
-- (IBAction)handleSignIn:(id)sender;
-- (IBAction)handleSignUp:(id)sender;
+- (IBAction)handle_SubmitSignUp:(id)sender;
 
 @end
 
-@implementation CFViewController
+@implementation SignUpViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    NSLog(@"Sign up view loaded successfully...");
 	// Do any additional setup after loading the view, typically from a nib.
     self.tf_uname.nextTextField = self.tf_pswd;
-    self.tf_pswd.nextTextField = self.tf_uname;
+    self.tf_pswd.nextTextField = self.tf_name;
+    self.tf_name.nextTextField = self.tf_uname;
+    
+    self.tf_uname.prevTextField = self.tf_name;
+    self.tf_pswd.prevTextField = self.tf_uname;
+    self.tf_name.prevTextField = self.tf_pswd;
 }
 
 - (void)didReceiveMemoryWarning
@@ -50,11 +56,22 @@
             [self.tf_pswd resignFirstResponder];
         }
     }
+    if ([self.tf_name isFirstResponder]) {
+        [self.tf_name resignFirstResponder];
+    }
 }
 
-- (void)nextOrPreviousClicked: (UIBarButtonItem*) sender
+- (void)nextClicked: (UIBarButtonItem*) sender
 {
     UITextField* next = self.activeTF.nextTextField;
+    if (next) {
+        [next becomeFirstResponder];
+    }
+}
+
+- (void)previousClicked: (UIBarButtonItem*) sender
+{
+    UITextField* next = self.activeTF.prevTextField;
     if (next) {
         [next becomeFirstResponder];
     }
@@ -72,7 +89,10 @@
 {
     self.activeTF = textField;
     NSLog(@"Right before");
-    self.lb_status.text =@" ";
+    
+    //[self.lb_status isHidden:YES];
+    
+    self.lb_status.text = @"  ";
     
     UIToolbar *toolbar = [[UIToolbar alloc] init];
     [toolbar sizeToFit];
@@ -81,13 +101,13 @@
                                    initWithTitle: @"Previous"
                                    style: UIBarButtonItemStyleDone
                                    target: self
-                                   action:@selector(nextOrPreviousClicked:)];
+                                   action:@selector(previousClicked:)];
     
     UIBarButtonItem *nextButton = [[UIBarButtonItem alloc]
                                    initWithTitle: @"Next"
                                    style: UIBarButtonItemStyleDone
                                    target: self
-                                   action:@selector(nextOrPreviousClicked:)];
+                                   action:@selector(nextClicked:)];
     
     UIBarButtonItem *flexButton = [[UIBarButtonItem alloc]
                                    initWithBarButtonSystemItem: UIBarButtonSystemItemFlexibleSpace
@@ -109,45 +129,23 @@
 }
 
 
+- (void) setPatient_obj:(patient*) p1
+{
+    NSLog(@"Inside set patient object method");
+patient *pat1 = [[patient alloc] init];
+    pat1.p_id = [p1 p_id];
+    NSLog(@"passed patient id is :%@", pat1.p_id);
+}
 
-- (IBAction)handleSignIn:(id)sender {
-    [self patient_gethttp:sender];
+- (IBAction)handle_SubmitSignUp:(id)sender {
     
+    [self patient_gethttp: sender];
 }
 
 
-
-- (IBAction)handleSignUp:(id)sender {
-    
-    NSLog(@" inside cfViewcont handle sign up");
-        [self performSegueWithIdentifier:@"mainToSignUp" sender:sender];
-    NSLog(@"End of handle sign up");
-    }
-    
-    // This will get called too before the view appears
-    - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-    {
-        
-        NSLog(@" inside cfViewcont prerare for segue");
-
-        if ([[segue identifier] isEqualToString:@"mainToSignUp"] || [[segue identifier] isEqualToString:@"mainToUserPage"]) {
-            
-            // Get destination view
-            SignUpViewController *vc = [segue destinationViewController];
-          
-            
-            // Pass the information to your destination view
-            [vc setPatient_obj:self.pat1];
-            
-            NSLog(@"End of prepare for segue..");
-        }
-    }
-
-
-
-- (void)patient_gethttp:(id)sender
+- (void)patient_gethttp:(id) sender
 {
-    self.pat1 =[[patient alloc] init];
+    
     
     // Create new SBJSON parser object
     SBJsonParser * parser = [[SBJsonParser alloc] init];
@@ -175,29 +173,28 @@
         // Each element in statuses is a single status
         // represented as a NSDictionary
         
-        BOOL Success_signin = NO;
+        BOOL Success_matchFound = NO;
         for (NSDictionary* each_patient in ipatient)
         {
             
             NSString* temp_uname= [[NSString alloc] initWithFormat:@"%@",[self.tf_uname text]];
             NSString* temp_pswd =[[NSString alloc] initWithFormat:@"%@",[self.tf_pswd text]];
-            
+            NSString* temp_name = [[NSString alloc] initWithFormat:@"%@",[self.tf_name text]];
+            if([temp_uname length] == 0 || [temp_pswd length] == 0 || [temp_name length] == 0){
+                NSLog(@"Enter all the compulsory fields marked *");
+                self.lb_status.text = @"Enter all the compulsory fields marked *";
+            }
+        
             if ([temp_uname  isEqualToString:[each_patient valueForKey:@"username"]]){
-                if([temp_pswd isEqualToString: [each_patient valueForKey:@"password"]]){
-                    
-                    self.pat1.p_id = [each_patient valueForKey:@"id"];
-                    self.pat1.name = [each_patient valueForKey:@"name"];
-                    NSLog(@"Hi %@, You have successfully signed in !!",self.pat1.name);
-                    Success_signin = YES;
-                    [self performSegueWithIdentifier:@"mainToUserPage" sender:sender];
-                    
-                }
                 
+                Success_matchFound = YES;
+                NSLog(@"Existing username. Try again.");
+                self.lb_status.text = @"Existing username. Try again.";
             }
         }
-        if(Success_signin == NO){
-            NSLog(@"Wrong password or username");
-            self.lb_status.text =@"Wrong password or username";
+        if(Success_matchFound == NO){
+            [self patient_posthttp:sender];
+            NSLog(@"Signed up successfully");
         }
         
     }
@@ -208,14 +205,27 @@
 }
 
 
-
-
-// below methods are unused. Just for learning/referencing purpose...
-- (void)patient_posthttp
+- (void)patient_posthttp: (id) sender
 {
-    NSString* webserviceURLStr = @"http://blooming-sea-6547.herokuapp.com";
+    
+    
+    NSString* inputStr1 = [[NSString alloc] initWithFormat:@"{\"username\":\"%@\",\"password\":\"%@\",\"name\":\"%@\"}",[self.tf_uname text], [self.tf_pswd text], [self.tf_name text]];
+    
+//      NSLog(@"inputStr1 is %@",inputStr1);
+
+    [self handle_postService:inputStr1 Sender:sender];
+    
+    
+}
+
+- (void) handle_postService:(NSString*) inputStr Sender:(id)sender{
+    
+    NSString* webserviceURLStr = @"http://blooming-sea-6547.herokuapp.com/patients_registry";
     NSString* returnStr = [[NSString alloc] init];
-    NSString* inputStr = @"{\"title\":\"Read something new\"}";
+    self.pat = [[patient alloc] init];
+    
+    // Create new SBJSON parser object
+    SBJsonParser * parser = [[SBJsonParser alloc] init];
     
     NSLog(@"Trying to connect %@ ...", webserviceURLStr);
     
@@ -232,6 +242,7 @@
             [urlRequest setValue:@"application/json" forHTTPHeaderField:@"Content-type"];
             [urlRequest setHTTPBody:[inputStr dataUsingEncoding:NSUTF8StringEncoding]];
         }
+        
         NSURLResponse* response;
         NSError* error;
         NSData* result = [NSURLConnection sendSynchronousRequest:urlRequest returningResponse:&response error:&error];
@@ -246,9 +257,14 @@
         {
             responseCode =  [(NSHTTPURLResponse*) response statusCode];
             NSLog(@"HTTP response code is %i", responseCode);
-            if (responseCode == 200)
+            if (responseCode == 201)
             {
                 returnStr =  [[NSString alloc] initWithData:result encoding:NSUTF8StringEncoding] ;
+               
+                
+                
+                        
+                
                 if (returnStr != nil)
                 {
                     if ([returnStr length] == 0)
@@ -256,6 +272,26 @@
                         returnStr = @"ERROR: No data received from the Webservice";
                         NSLog(@"No data received from the server");
                     }
+                    else
+                    {
+                        // parse the JSON response into an object
+                        // Here we're using NSArray since we're parsing an array of JSON status objects
+                        
+                        NSDictionary *patientset = [parser objectWithString:returnStr ];
+                        
+                        NSDictionary* ipatient = [patientset valueForKey:@"patient"];
+                        
+                        // There is going to be just 1 element in the dictionary array
+                        
+                        self.pat.p_id = [ipatient valueForKey:@"id"];
+                        self.pat.name = [ipatient valueForKey:@"name"];
+                        NSLog(@"Hi %@, You have successfully signed in !!",self.pat.name);
+                        NSLog(@" inside cfViewcont handle sign up");
+                        [self performSegueWithIdentifier:@"signUpToUserPage" sender:sender];
+                        NSLog(@"End of handle sign up");
+                    }
+                
+                
                 }
                 else
                 {
@@ -282,48 +318,23 @@
     NSLog(@"%d", responseCode);
 }
 
-
-- (void)doctor_gethttp
+// This will get called too before the view appears
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // Create new SBJSON parser object
-    SBJsonParser * parser = [[SBJsonParser alloc] init];
     
-    @try {
+    NSLog(@" inside cfViewcont prerare for segue");
+    
+    if ([[segue identifier] isEqualToString:@"signUpToUserPage"] ) {
+        
+        // Get destination view
+        SignUpViewController *vc = [segue destinationViewController];
         
         
-        // Prepare URL request to download statuses from Twitter
-        NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://blooming-sea-6547.herokuapp.com"]];
+        // Pass the information to your destination view
+        [vc setPatient_obj:self.pat];
         
-        // Perform request and get JSON back as a NSData object
-        NSData *response = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
-        
-        NSLog(@"response is %@",response);
-        
-        // Get JSON as a NSString from NSData response
-        NSString *json_string = [[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding];
-        
-        NSLog(@"json_string is %@",json_string);
-        // parse the JSON response into an object
-        // Here we're using NSArray since we're parsing an array of JSON status objects
-        NSDictionary *statuses = [parser objectWithString:json_string ];
-        NSArray* itask = [statuses valueForKey:@"tasks"];
-        NSLog(@"itask is %@",itask );
-        // Each element in statuses is a single status
-        // represented as a NSDictionary
-        for (NSDictionary* each_task in itask)
-        {
-            NSLog(@"%@ is status", each_task);
-            // You can retrieve individual values using objectForKey on the status NSDictionary
-            // This will print the tweet and username to the console
-            NSLog(@"%@ - %@", [each_task valueForKey:@"title"], [each_task valueForKey:@"id"] );
-        }
-        
-    }
-    @catch (NSException* e ) {
-        
-        NSLog(@"Exception raised : %@", [e reason]);
+        NSLog(@"End of prepare for segue..");
     }
 }
-
 
 @end

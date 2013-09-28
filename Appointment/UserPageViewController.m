@@ -10,6 +10,7 @@
 #import "SBJson.h"
 #import "UITextField+nextTextField.h"
 #import "patient.h"
+#import "DoctorTableViewController.h"
 
 
 @interface UserPageViewController ()
@@ -138,12 +139,34 @@
 
 - (IBAction)hanlde_findDoctor:(id)sender {
     [self patient_puthttp];
+    [self performSegueWithIdentifier:@"userPageToDoctors" sender:sender];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    
+    NSLog(@" inside userPageVC prerare for segue");
+    
+    if ([[segue identifier] isEqualToString:@"userPageToDoctors"] ) {
+        
+        // Get destination view
+        DoctorTableViewController *vc = [segue destinationViewController];
+        
+      
+        // Pass the information to your destination view
+        [vc setPatient_obj:self.pat];
+        
+        NSLog(@"End of prepare for segue..");
+    }
 }
 
 
 - (void) patient_puthttp{
     
     NSString* inputStr = [[NSString alloc] initWithFormat:@"{\"location\":\"%@\",\"category\":\"%@\"}",[self.tf_loc text],  [self.tf_cat text]];
+    
+    self.pat.category =  [self.tf_cat text];
+    self.pat.location =  [self.tf_loc text];
     
     //location is not a key in patients regitstry.. only used in finding doctor...
     

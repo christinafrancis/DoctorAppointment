@@ -48,6 +48,9 @@
 		CFD392BE17F2637100C580CA /* SBJsonStreamWriterAccumulator.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD3929F17F261D700C580CA /* SBJsonStreamWriterAccumulator.m */; };
 		CFD392C117F2637100C580CA /* SBJsonStreamParserState.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD392A217F261D700C580CA /* SBJsonStreamParserState.m */; };
 		CFD392C217F2637100C580CA /* SBJsonStreamTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD392A317F261D700C580CA /* SBJsonStreamTokeniser.m */; };
+		CFECCEC317F6338000EFAB71 /* DoctorTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFECCEC217F6338000EFAB71 /* DoctorTableViewController.m */; };
+		CFECCEC617F648E800EFAB71 /* DateTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFECCEC517F648E800EFAB71 /* DateTableViewController.m */; };
+		CFECCEC917F664EC00EFAB71 /* ConfirmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFECCEC817F664EC00EFAB71 /* ConfirmViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +116,12 @@
 		CFD392A217F261D700C580CA /* SBJsonStreamParserState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParserState.m; sourceTree = "<group>"; };
 		CFD392A317F261D700C580CA /* SBJsonStreamTokeniser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamTokeniser.m; sourceTree = "<group>"; };
 		CFD392A417F261D700C580CA /* SBJsonStreamTokeniser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamTokeniser.h; sourceTree = "<group>"; };
+		CFECCEC117F6338000EFAB71 /* DoctorTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorTableViewController.h; sourceTree = "<group>"; };
+		CFECCEC217F6338000EFAB71 /* DoctorTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoctorTableViewController.m; sourceTree = "<group>"; };
+		CFECCEC417F648E800EFAB71 /* DateTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateTableViewController.h; sourceTree = "<group>"; };
+		CFECCEC517F648E800EFAB71 /* DateTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateTableViewController.m; sourceTree = "<group>"; };
+		CFECCEC717F664EC00EFAB71 /* ConfirmViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfirmViewController.h; sourceTree = "<group>"; };
+		CFECCEC817F664EC00EFAB71 /* ConfirmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfirmViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +189,12 @@
 				CFD3925117F10E5C00C580CA /* CFAppDelegate.m */,
 				CFD3925917F10E5C00C580CA /* MainStoryboard_iPhone.storyboard */,
 				CFD3925C17F10E5C00C580CA /* MainStoryboard_iPad.storyboard */,
+				CFECCEC717F664EC00EFAB71 /* ConfirmViewController.h */,
+				CFECCEC817F664EC00EFAB71 /* ConfirmViewController.m */,
+				CFECCEC417F648E800EFAB71 /* DateTableViewController.h */,
+				CFECCEC517F648E800EFAB71 /* DateTableViewController.m */,
+				CFECCEC117F6338000EFAB71 /* DoctorTableViewController.h */,
+				CFECCEC217F6338000EFAB71 /* DoctorTableViewController.m */,
 				CFCD84D917F505470054D1B4 /* UserPageViewController.h */,
 				CFCD84DA17F505470054D1B4 /* UserPageViewController.m */,
 				CFCD84D617F3D6A00054D1B4 /* SignUpViewController.h */,
@@ -374,6 +389,9 @@
 				CFCD84D517F3BFE10054D1B4 /* patient.m in Sources */,
 				CFCD84D817F3D6A00054D1B4 /* SignUpViewController.m in Sources */,
 				CFCD84DB17F505470054D1B4 /* UserPageViewController.m in Sources */,
+				CFECCEC317F6338000EFAB71 /* DoctorTableViewController.m in Sources */,
+				CFECCEC617F648E800EFAB71 /* DateTableViewController.m in Sources */,
+				CFECCEC917F664EC00EFAB71 /* ConfirmViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

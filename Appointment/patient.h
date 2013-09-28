@@ -17,6 +17,7 @@
 @property NSString* category;
 @property NSString* doctor;
 @property NSString* n_date;
+@property NSString* location;
 
 
 @end

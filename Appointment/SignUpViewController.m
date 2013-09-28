@@ -12,6 +12,7 @@
 #import "SBJson.h"
 #import "UITextField+nextTextField.h"
 #import "patient.h"
+#import "UserPageViewController.h"
 
 
 @interface SignUpViewController ()
@@ -327,7 +328,7 @@ patient *pat1 = [[patient alloc] init];
     if ([[segue identifier] isEqualToString:@"signUpToUserPage"] ) {
         
         // Get destination view
-        SignUpViewController *vc = [segue destinationViewController];
+        UserPageViewController *vc = [segue destinationViewController];
         
         
         // Pass the information to your destination view
